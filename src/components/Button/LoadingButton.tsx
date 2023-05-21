@@ -1,9 +1,11 @@
 import { ComponentProps, forwardRef } from 'react'
 import styled from '@emotion/styled'
+import { css } from '@emotion/react'
 
 import Button from '.'
 import Spinner from '../Spinner'
 import Flex from '../Flex'
+import getSize from 'components/Spinner/getSize'
 
 interface SpinnerStyle {
   spinnerColor: ComponentProps<typeof Spinner>['color']
@@ -50,6 +52,7 @@ export default LoadingButton
 LoadingButton.displayName = 'LoadingButton'
 
 const DummyBox = styled(Flex)<Pick<SpinnerStyle, 'spinnerSize'>>`
-  width: ${({ spinnerSize }) => spinnerSize}px;
-  height: ${({ spinnerSize }) => spinnerSize}px;
+  ${({ spinnerSize }) => css`
+    ${!!spinnerSize && getSize(spinnerSize)};
+  `}
 `
