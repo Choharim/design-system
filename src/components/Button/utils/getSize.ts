@@ -6,16 +6,16 @@ export type Size = 'small' | 'medium' | 'large'
 
 const SIZE: Record<Size, CSSObject> = {
   small: {
-    height: '30px',
-    padding: '0 8px',
+    height: '36px',
+    padding: '0 14px',
   },
   medium: {
     height: '40px',
-    padding: '0 12px',
+    padding: '0 16px',
   },
   large: {
-    height: '50px',
-    padding: '0 16px',
+    height: '48px',
+    padding: '0 20px',
   },
 }
 
